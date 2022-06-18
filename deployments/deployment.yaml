@@ -1,12 +1,13 @@
+#Autoscale
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: landingpage
-  labels:
-    app: landingpage
+    name: landingpage
+    labels:
+      app: landingpage
 spec:
   selector:
-   matchLabels:
+    matchLabels:
       app: landingpage
   template:
     metadata:
@@ -14,13 +15,12 @@ spec:
         app: landingpage
     spec:
       containers:
-       - name: landingpage
-         image: harjay88/landingpage:latest
-         resources:
-          requests:
-            cpu: "50m"
-            memory: "50M"
-
+        - name: landingpage
+          image: harjay88/landingpage:latest
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "50M"
 ---
 #Service
 apiVersion: v1
