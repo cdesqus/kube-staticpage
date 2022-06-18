@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: landingpage
+spec:
+  minReplicas: 4
+  maxReplicas: 100
+  scaleTargetRef:
+    kind: Deployment
+    name: landingpage
+  targetCPUUtilizationPercentage: 5 #dalam percent, setelah setup request CPU di yaml Deployment
