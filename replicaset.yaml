@@ -1,0 +1,21 @@
+#Replicaset
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: landingpage
+  labels:
+    app: landingpage
+spec:
+  selector:
+    matchLabels:
+      app: landingpage
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: landingpage
+    spec:
+      containers:
+       - name: landingpage
+         image: harjay88/landingpage:latest
+         

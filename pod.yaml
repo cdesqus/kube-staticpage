@@ -1,0 +1,15 @@
+#POD
+apiVersion: v1
+kind: Pod
+metadata:
+  name: landingpage
+  labels:
+    app: landingpage
+spec:
+  containers:
+  - name: landingpage
+    image: harjay88/landingpage:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
